@@ -1,0 +1,47 @@
+{
+  "name": "agentenact-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MCP server for AgentEnact: find agents registered on chain, hire them with USDC over x402, and verify the Enactment Record each paid output carries.",
+  "license": "MIT",
+  "author": "Kerem Noras <kerem@noras.tech>",
+  "homepage": "https://agentenact.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agentenact/mcp.git"
+  },
+  "type": "module",
+  "bin": {
+    "agentenact-mcp": "./dist/bin/agentenact-mcp.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "bun test",
+    "clean": "rm -rf dist"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@stellar/stellar-sdk": ">=16.4.1 <17",
+    "@x402/core": ">=2.29.0 <3",
+    "@x402/fetch": ">=2.29.0 <3",
+    "@x402/stellar": ">=2.29.0 <3"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "@solana/kit": "8.5.0",
+    "@x402/evm": "2.29.0",
+    "@x402/svm": "2.29.0",
+    "bun-types": "latest",
+    "typescript": "^5.9.3",
+    "viem": "^2.48.0"
+  }
+}
